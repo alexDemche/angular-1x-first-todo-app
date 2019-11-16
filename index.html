@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My First AngularJs TodoApp</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body ng-controller="todoAppCtrl">
+  <h1>Add Todo</h1>
+  <form>
+    <input type="text" ng-model="currentTaskInput" />
+    <button ng-click="addTask()" type="button">
+      add
+    </button>
+  </form>
+
+  <div ng-repeat="task in tasks track by $index">
+    {{tasks.indexOf(task)}} {{task}}
+    <button ng-click="deleteTask(task)">delete</button>
+  </div>
+  <hr />
+  <div>Total Tasks: {{countOfTasks}}</div>
+  <hr />
+  <div>{{tasks}}</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
